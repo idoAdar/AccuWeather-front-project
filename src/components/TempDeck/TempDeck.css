@@ -1,0 +1,53 @@
+.tempdeck-main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 10rem;
+  background-color: #47c3d38e;
+}
+
+.tempdeck-main-card {
+  width: 12rem;
+  height: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  animation: animate 0.4s ease-in forwards;
+}
+
+.tempdeck-main-card p,
+.tempdeck-main-card i {
+  color: #ffffff;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 375px) {
+  .tempdeck-main {
+    margin-top: 2rem;
+  }
+
+  .tempdeck-main-card {
+    width: 6rem;
+  }
+
+  .tempdeck-main-card i {
+    font-size: 2rem;
+  }
+
+  .tempdeck-main p {
+    font-size: 0.8rem;
+  }
+}

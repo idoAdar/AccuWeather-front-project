@@ -1,0 +1,46 @@
+.favorite-screen-main {
+  width: 65rem;
+  height: 45rem;
+  margin: 2rem auto;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../../noaa-ieWHXjjAEwY-unsplash.jpg");
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  box-shadow: 3px 4px 8px #474747;
+}
+
+.favorite-screen-main-title {
+  padding: 2rem;
+  text-align: center;
+  color: #ffff;
+  background-color: #47c3d38e;
+}
+
+.favorite-screen-main-title i {
+  color: #6d2ebe;
+}
+
+.favorite-grid {
+  width: 100%;
+  height: 32rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+@media (max-width: 375px) {
+  .favorite-screen-main {
+    width: 100%;
+    height: 55rem;
+    margin: 0 auto;
+    box-shadow: 0px 0px 0px #474747;
+  }
+
+  .favorite-grid {
+    width: 100%;
+    height: 46rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}

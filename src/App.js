@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import { Route, Switch } from 'react-router-dom';
+
+import Navbar from './components/Navbar/Navbar';
+import HomeScreen from './containers/HomeScreen/HomeScreen';
+import WeatherScreen from './containers/WeatherScreen/WeatherScreen';
+import FavoriteScreen from './containers/FavoriteScreen/FavoriteScreen';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={'app-main'}>
+      <Navbar />
+      <main>
+        <Switch>
+          <Route path={'/'} exact component={HomeScreen}/>
+          <Route path={'/weather'} component={WeatherScreen}/>
+          <Route path={'/favorite'} component={FavoriteScreen}/>
+        </Switch>
+      </main>
+      <div className={'author'}><p>Ido Adar</p></div>
     </div>
   );
 }

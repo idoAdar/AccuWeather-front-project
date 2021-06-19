@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5ca320ce.chunk.css",
+    "main.js": "/static/js/main.0fc1b8e6.chunk.js",
+    "main.js.map": "/static/js/main.0fc1b8e6.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a06e69b5.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a06e69b5.js.map",
+    "static/js/2.10a7e623.chunk.js": "/static/js/2.10a7e623.chunk.js",
+    "static/js/2.10a7e623.chunk.js.map": "/static/js/2.10a7e623.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.5ca320ce.chunk.css.map": "/static/css/main.5ca320ce.chunk.css.map",
+    "static/js/2.10a7e623.chunk.js.LICENSE.txt": "/static/js/2.10a7e623.chunk.js.LICENSE.txt",
+    "static/media/HomeScreen.css": "/static/media/friederike-manthey-v6kgtOyQfgc-unsplash.e862d6f0.jpg",
+    "static/media/WeatherScreen.css": "/static/media/mika-luoma-qeRdVtT2htY-unsplash.ab91e48f.jpg",
+    "static/media/FavoriteScreen.css": "/static/media/noaa-ieWHXjjAEwY-unsplash.9cc71b27.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a06e69b5.js",
+    "static/js/2.10a7e623.chunk.js",
+    "static/css/main.5ca320ce.chunk.css",
+    "static/js/main.0fc1b8e6.chunk.js"
+  ]
+}

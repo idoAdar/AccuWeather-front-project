@@ -1,0 +1,61 @@
+.home-screen-main {
+  width: 65rem;
+  height: 45rem;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 2rem 6rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../../friederike-manthey-v6kgtOyQfgc-unsplash.jpg");
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  box-shadow: 3px 4px 8px #474747;
+}
+
+.home-screen-main h1 {
+  color: #ffff;
+  font-size: 4rem;
+}
+
+.home-screen-main h1::first-letter {
+  font-size: 5rem;
+  color: #47c3d3;
+}
+
+.home-screen-main p {
+  color: #ffff;
+  font-size: 2rem;
+}
+
+.home-screen-main small {
+  color: #ffff;
+  text-align: center;
+  line-height: 2.2rem;
+  font-size: 1.1rem;
+}
+
+.home-screen-main i {
+  color: #47c3d3;
+  font-size: 5rem;
+}
+
+@media (max-width: 375px) {
+  .home-screen-main {
+    width: 100%;
+    height: 44rem;
+    margin: 0rem auto;
+    padding: 1rem;
+    box-shadow: 0px 0px 08px #474747;
+  }
+
+  .home-screen-main h1 {
+    font-size: 2rem;
+  }
+
+  .home-screen-main h1::first-letter {
+    font-size: 3rem;
+  }
+}

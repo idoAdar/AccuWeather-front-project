@@ -1,0 +1,40 @@
+.navbar-main {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 5rem;
+  background-color: #363636;
+}
+
+.navbar-main h3 {
+  color: #ffffff;
+}
+
+.navbar-main ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.navbar-main ul a {
+  margin: 1rem;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.navbar-main ul a:hover {
+  cursor: pointer;
+  color: #47c3d3;
+}
+
+.active {
+  color: #47c3d3 !important;
+}
+
+@media (max-width: 375px) {
+  .navbar-main ul a {
+    font-size: 0.8rem;
+    margin: 0.5rem;
+  }
+}

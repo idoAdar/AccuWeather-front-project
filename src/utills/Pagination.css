@@ -1,0 +1,27 @@
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  width: 32rem;
+  margin: 0 auto;
+}
+
+.pagination li {
+  margin: 2px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.pagination i {
+  color: white;
+}
+
+.pagination i:hover {
+  color: #47c3d38e;
+}
+
+@media (max-width: 375px) {
+  .pagination {
+    width: 100%;
+  }
+}
