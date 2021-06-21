@@ -6,6 +6,13 @@
   background-color: #363636;
 }
 
+.navbar-main div:first-child {
+  width: 10rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .navbar-main h3 {
   color: #ffffff;
 }
@@ -35,6 +42,25 @@
 @media (max-width: 375px) {
   .navbar-main ul a {
     font-size: 0.8rem;
-    margin: 0.5rem;
+    margin: 0.3rem;
   }
+}
+
+/* Light Mode */
+.light-mode .navbar-main {
+  background-color: #fafafa;
+}
+
+.light-mode .navbar-main h3,
+.light-mode .navbar-main a {
+  color: black;
+  font-weight: bold;
+}
+
+.light-mode .active {
+  color: #ee0e0e !important;
+}
+
+.light-mode .navbar-main ul a:hover {
+  color: #ee0e0e;
 }

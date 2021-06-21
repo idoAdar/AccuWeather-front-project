@@ -6,7 +6,34 @@ ADD_TO_FAVORITES,
 REMOVE_FROM_FAVORITES,
 SET_MESSAGE
  } from './actionTypes';
-const API = 'QidwYLl44OsOGVhVplccGGlYfXHvtp8L';
+const API = 'HeIBFKnJmUovajKW8vDI6Ja7F1c80SiR';
+
+export const getCurrentPosition = () => async dispatch => {
+    const successCb = async position => {
+        const response = await axios.get(`https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${API}&q=${position.coords.latitude}%2C${position.coords.longitude}&toplevel=true`);
+        
+        const data = {
+            id: Math.random(),
+            country: response.data.Country.LocalizedName,
+            city: response.data.TimeZone.Name,
+            text: response.data.Region.LocalizedName,
+            temp: 72.4,
+            datetime: new Date(),
+            key: '213225'
+        };
+
+        dispatch({
+            type: GET_WEATHER,
+            payload: data
+        })        
+    }
+    
+    const errorCb = error => {
+        console.log(error);
+    }
+    
+    navigator.geolocation.getCurrentPosition(successCb, errorCb);
+}
 
 export const getCityCode = state => async dispatch => {
     try {
@@ -32,10 +59,15 @@ export const getCityCode = state => async dispatch => {
 export const getCityWeather = (key, country, city) => async dispatch => {
     try {
         const response = await axios.get(`https://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=${API}`);
+        const results = response.data[0];
         const data = {
-            weather: response.data,
+            id: Math.random(),
             country,
-            city
+            city,
+            text: results.WeatherText,
+            temp: results.Temperature.Imperial.Value,
+            datetime: new Date(results.LocalObservationDateTime),
+            key: key
         };
         dispatch({
             type: GET_WEATHER,
@@ -72,13 +104,12 @@ export const addToFavorites = () => (dispatch, getState) => {
     if (isExist) {
         return dispatch({
             type: SET_MESSAGE,
-            payload: 'City already in your favorite list'
+            payload: `${isExist.city} already in your favorites`
         })
     }
     dispatch({
         type: ADD_TO_FAVORITES,
-        payload: current,
-        message: 'City added to your favorite list'
+        payload: current
     })
 }
 

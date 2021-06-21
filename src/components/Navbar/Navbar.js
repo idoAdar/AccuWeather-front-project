@@ -32,17 +32,26 @@ const Navbar = () => {
         )
     })
 
+    // Light-Mode:
+    const lightMode = event => {
+        if (event.target.checked) {
+            return document.body.className = 'light-mode';
+        }
+        document.body.className = '';
+    }
+
     return (
-        <Fragment>
+        <nav>
             <div className={'navbar-main'}>
                 <div>
                     <h3><i className="fas fa-umbrella fa-lg"></i> AccuApp</h3>
+                    <input type={'checkbox'} onChange={lightMode} />
                 </div>
                 <ul>
                     {renderRoutes}
                 </ul>
             </div>
-        </Fragment>
+        </nav>
     )
 }
 

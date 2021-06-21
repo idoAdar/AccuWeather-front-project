@@ -22,7 +22,7 @@
 }
 
 .favorite-grid {
-  width: 100%;
+  width: 65rem;
   height: 32rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -40,7 +40,12 @@
   .favorite-grid {
     width: 100%;
     height: 46rem;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
   }
+}
+
+/* Light Mode */
+.light-mode .favorite-screen-main-title {
+  background-color: #ee0e0e;
 }

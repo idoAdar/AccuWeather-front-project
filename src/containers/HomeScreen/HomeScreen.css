@@ -59,3 +59,18 @@
     font-size: 3rem;
   }
 }
+
+/* Light Mode */
+.light-mode .home-screen-main {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../friederike-manthey-v6kgtOyQfgc-unsplash.jpg");
+}
+
+.light-mode .home-screen-main h1::first-letter {
+  color: #ee0e0e;
+}
+
+.light-mode .home-screen-main i {
+  color: #ee0e0e;
+  font-size: 5rem;
+}

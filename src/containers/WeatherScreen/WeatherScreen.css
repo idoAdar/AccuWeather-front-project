@@ -106,3 +106,17 @@
     margin-top: 0rem;
   }
 }
+
+/* Light Mode */
+.light-mode .flex-warrper i {
+  color: #ee0e0e91;
+}
+
+.light-mode .flex-warrper i:hover {
+  color: #db313191;
+  cursor: pointer;
+}
+
+.light-mode .weather-screen-message {
+  background-color: #ee0e0e91;
+}

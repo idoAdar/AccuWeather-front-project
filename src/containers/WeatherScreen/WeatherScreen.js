@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCityWeather, getFiveDaysWeather, addToFavorites } from '../../store/actions';
+import { getCurrentPosition, getCityWeather, getFiveDaysWeather, addToFavorites } from '../../store/actions';
 import { motion } from 'framer-motion';
 import InputSearch from '../../components/InputSearch/InputSearch';
 import TempDeck from '../../components/TempDeck/TempDeck';
@@ -10,11 +10,16 @@ import './WeatherScreen.css';
 const WeatherScreen = () => {
     const weatherData = useSelector(state => state.curWeather);
     const messageData = useSelector(state => state.message);
+    const isRedirect = useSelector(state => state.isRedirect);
     const dispatch = useDispatch();
 
+    // Default Location By Geolocation API:
     useEffect(() => {
-        dispatch(getCityWeather('215854', 'Israel', 'Tel Aviv'));
-        dispatch(getFiveDaysWeather('215854'));
+        if (!isRedirect) {
+            dispatch(getCurrentPosition());
+            const defaultKey = '215854';
+            return dispatch(getFiveDaysWeather(defaultKey));
+        }
     }, []);
 
     const getWeather = (key, country, city) => {
@@ -24,11 +29,6 @@ const WeatherScreen = () => {
 
     const favoriteHandler = () => {
         dispatch(addToFavorites());
-    }
-
-    let datetime;
-    if (weatherData) {
-        datetime = new Date(weatherData.weather[0].LocalObservationDateTime);
     }
 
     let message;
@@ -54,17 +54,17 @@ const WeatherScreen = () => {
             <div className={'weather-screen-main'}>
                 <div className={'flex-warrper'}>
                     <div>
-                        <h3>{datetime?.toLocaleTimeString()}</h3>
+                        <h3>{weatherData?.datetime.toLocaleTimeString()}</h3>
                         <i className="fas fa-clock fa-2x"></i>
-                        <small>{datetime?.toDateString()}</small>
+                        <small>{weatherData?.datetime.toDateString()}</small>
                     </div>
                     <InputSearch onWeather={getWeather}/>
                     <div>
                         <h3>{weatherData?.country}</h3>
                         <i onClick={favoriteHandler} className="fas fa-heart fa-2x"></i>
                         <small>{weatherData?.city}</small>
-                        <small>{weatherData?.weather[0].WeatherText}</small>
-                        <small>Now: {weatherData?.weather[0].Temperature.Imperial.Value}F</small>
+                        <small>{weatherData?.text}</small>
+                        <small>Now: {weatherData?.temp}F</small>
                     </div>            
                 </div>
                 <TempDeck />

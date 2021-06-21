@@ -3,7 +3,8 @@ GET_WEATHER,
 GET_WEEK_WEATHER,
 ADD_TO_FAVORITES,
 REMOVE_FROM_FAVORITES,
-SET_MESSAGE
+SET_MESSAGE,
+REDIRECT
  } from './actionTypes';
 
 const initState = {
@@ -11,7 +12,8 @@ const initState = {
     inputResults: [],
     weekForecasts: [],
     favorites: [],
-    message: ''
+    message: '',
+    isRedirect: false
 };
 
 const reducer = (state = initState, action) => {
@@ -33,13 +35,14 @@ const reducer = (state = initState, action) => {
             return {
                 ...state,
                 weekForecasts: action.payload,
-                message: ''
+                message: '',
+                isRedirect: false
             }
         case ADD_TO_FAVORITES:
             return {
                 ...state,
                 favorites: [ action.payload, ...state.favorites ],
-                message: action.message
+                message: `${action.payload.city} added to your favorites`
             }
         case REMOVE_FROM_FAVORITES:
             return {
@@ -50,6 +53,11 @@ const reducer = (state = initState, action) => {
             return {
                 ...state,
                 message: action.payload
+            }
+        case REDIRECT:
+            return {
+                ...state,
+                isRedirect: true
             }
         default: return state;
     }

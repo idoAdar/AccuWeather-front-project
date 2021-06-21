@@ -51,3 +51,8 @@
     font-size: 0.8rem;
   }
 }
+
+/* Light Mode */
+.light-mode .tempdeck-main {
+  background-color: #ee0e0e91;
+}

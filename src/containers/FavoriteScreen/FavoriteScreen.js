@@ -40,11 +40,12 @@ const FavoriteScreen = () => {
                     {favorites.length > 0 ? (
                         currentForecasts.map(favorite => {
                             return (
-                                <Card key={Math.random()} 
+                                <Card key={favorite.id} 
                                 country={favorite.country}
                                 city={favorite.city} 
-                                temp={favorite.weather[0]?.Temperature.Imperial.Value || '24'}
-                                desc={favorite.weather[0]?.WeatherText}
+                                temp={favorite.temp}
+                                desc={favorite.text}
+                                searchKey={favorite.key}
                                 />
                             )
                         })
